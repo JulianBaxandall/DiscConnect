@@ -1,0 +1,48 @@
+body {
+    background-color: #E1DFF6;
+}
+
+.independence {
+    color: #374A67;
+}
+
+.authentication-option {
+    color: #374A67;
+    background-color: #E1CE7A;
+}
+
+.lavender {
+    background-color: #E1DFF6;
+}
+
+.top-bar {
+    color: #374A67;
+    background-color: #E1CE7A;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
+    z-index:10;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.nav-bar {
+    color: #374A67;
+    background-color: #E1CE7A;
+}
+
+.landing {
+    margin: 5vmin;
+    padding: 10px;
+    text-align: center;
+    background-color: #E1DFF6;
+}
+
+.authentication-page {
+    margin: 5vmin;
+    padding: 10px;
+    color: #374A67;
+}
+
+.button {
+    border-radius: 30px;
+}
