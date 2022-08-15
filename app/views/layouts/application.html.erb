@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BreakableToy</title>
+  <title>ClearHard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
   <nav class="top-bar">
-    <h1><a href="/">BreakableToy</a></h1>
+    <h1><a href="/" class="nav-bar">ClearHard</a></h1>
 
     <section class="top-bar-section">
-      <ul class="right">
+      <ul>
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li class = "authentication-option"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li class = "authentication-option"><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li class = "authentication-option"><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
   </nav>
-
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
@@ -39,7 +37,6 @@
     <%- end -%>
   <%- end -%>
   <%= javascript_pack_tag 'application' %>
-  
   <%= yield :extra_footer %>
 </body>
 </html>
