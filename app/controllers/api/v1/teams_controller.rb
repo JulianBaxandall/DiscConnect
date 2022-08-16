@@ -4,6 +4,8 @@ class Api::V1::TeamsController < ApplicationController
     end
 
     def show
-        render json: Team.find(params[:id])
+        team = Team.find(params[:id])
+        serialized_team = ActiveModelSerializers::SerializableResource.new(team, serializer: TeamShowSerializer).to_json
+        render json: serialized_team
     end
 end
