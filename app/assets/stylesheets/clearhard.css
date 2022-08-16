@@ -8,7 +8,7 @@ body {
 
 .authentication-option {
     color: #374A67;
-    background-color: #E1CE7A;
+    background-color: #F4ECCD;
 }
 
 .lavender {
@@ -17,7 +17,7 @@ body {
 
 .top-bar {
     color: #374A67;
-    background-color: #E1CE7A;
+    background-color: #F4ECCD;
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
     z-index:10;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
@@ -27,13 +27,14 @@ body {
 
 .nav-bar {
     color: #374A67;
-    background-color: #E1CE7A;
+    background-color: #F4ECCD;
 }
 
-.landing {
+.page {
     margin: 5vmin;
     padding: 10px;
     text-align: center;
+    color: #374A67;
     background-color: #E1DFF6;
 }
 
@@ -45,4 +46,15 @@ body {
 
 .button {
     border-radius: 30px;
+}
+
+.card {
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
+    z-index:10;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    background-color: #F4ECCD;
+    margin-left: auto;
+    margin-right: auto;
 }

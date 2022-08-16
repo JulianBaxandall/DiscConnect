@@ -9,9 +9,11 @@
 <body>
   <nav class="top-bar">
     <h1><a href="/" class="nav-bar">ClearHard</a></h1>
-
+    <h5 class = "authentication-option"><%=link_to 'Teams', teams_path%></h5>
+    <h5 class = "authentication-option"><%=link_to 'Home', root_path%></h5>
     <section class="top-bar-section">
       <ul>
+        
         <%- if current_user -%>
           <li class = "authentication-option"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
