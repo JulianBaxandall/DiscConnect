@@ -1,6 +1,5 @@
 class Api::V1::TeamsController < ApplicationController
-
-    protect_from_forgery unless: -> { request.format.json? }
+    protect_from_forgery unless: -> { request.format.json?}
 
     def index
         render json: Team.all
@@ -13,10 +12,9 @@ class Api::V1::TeamsController < ApplicationController
     end
 
     def create
-        new_team = Team.create(team_params)
-        binding.pry
-        if new_team.save
-            redirect_to "/teams"
+        team = Team.create(team_params)
+        if team.save
+            redirect_to "/teams/#{team.id}"
         else
             render json: {error: review.errors.full_messages}, status: :unprocessable_entity
         end
@@ -26,6 +24,6 @@ class Api::V1::TeamsController < ApplicationController
     private
 
     def team_params
-        params.require(:team).permit(:name, :description, :division, :current_user)
+        params.require(:team).permit(:name, :description, :division)    
     end
 end
