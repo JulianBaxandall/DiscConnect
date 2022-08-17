@@ -23,7 +23,6 @@ const TeamsShow = (props) => {
       }, []);
 
     const teamMembers = showTeam.users.map((user) => {
-        console.log(user)
         return(<TeamMemberTile 
             key = {user.id}
             name = {user.name}
