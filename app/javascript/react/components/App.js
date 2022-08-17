@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import TeamsIndex from "./TeamsIndex"
 import TeamsShow from "./TeamsShow"
-import TeamsNew from './TeamsNew';
+import TeamsNew from './TeamsNew'
+import WorkoutsNew from './WorkoutsNew'
 
 export const App = (props) => {
   return (
@@ -12,6 +13,7 @@ export const App = (props) => {
         <Route exact path='/teams' component={TeamsIndex} />
         <Route exact path="/teams/new" component={TeamsNew} />
         <Route exact path="/teams/:id/" component={TeamsShow} />
+        <Route exact path="/workouts/new" component={WorkoutsNew} />
       </Switch>
     </BrowserRouter>
   )
