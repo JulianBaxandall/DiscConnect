@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :teams, only: [:index, :show, :create]
+      resources :teams, only: [ :show] do
+        resources :workouts, only: [:index]
+      end
       resources :workouts, only: [:create]
     end
   end
@@ -14,5 +17,6 @@ Rails.application.routes.draw do
   get "/teams/new", to: "teams#new"
   get "/teams/:id", to: "teams#show"
   get "/workouts/new", to: "workouts#new"
+  get "/teams/:id/workouts", to: "workouts#index"
 
 end

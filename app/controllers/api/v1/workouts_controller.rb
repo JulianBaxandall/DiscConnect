@@ -14,6 +14,12 @@ class Api::V1::WorkoutsController < ApplicationController
         end
     end
 
+    def index
+        team = Team.find(params[:team_id]) 
+        serialized_team = ActiveModelSerializers::SerializableResource.new(team, serializer: TeamWorkoutsSerializer).to_json
+        render json: serialized_team
+    end
+
     private
 
     def workout_params
