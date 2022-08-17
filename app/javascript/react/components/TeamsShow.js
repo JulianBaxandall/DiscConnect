@@ -19,8 +19,8 @@ const TeamsShow = (props) => {
     }
 
     useEffect(() => {
-        getTeam();
-      }, []);
+        getTeam()
+      }, [])
 
     const teamMembers = showTeam.users.map((user) => {
         return(<TeamMemberTile 
@@ -31,9 +31,11 @@ const TeamsShow = (props) => {
         )
     })
 
+    let workoutsUrl = `/teams/${showTeam.id}/workouts`
     return(
-        <div className = "page grid-x grid-padding-x grid-y grid-padding-y">            
+        <div className = "page grid-x grid-padding-x grid-y grid-padding-y independence">            
             <h1>Team Name: {showTeam.name}</h1>
+            <h3><a href = {workoutsUrl}> Workouts</a></h3>
             <p>Description: {showTeam.description}</p>
             <h3>Team Members:</h3>
             {teamMembers}
