@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from "react"
+import { Route, Redirect } from 'react-router'
+
 import NewTeamForm from "./NewTeamForm"
 
 const TeamsNew = (props) => {
+    const [shouldRedirect, setShouldRedirect] = useState({
+        status: false,
+        teamId: null
+    })
     const submitTeam = async (event, formPayload) => {
         event.preventDefault()
         try { 
@@ -19,9 +25,21 @@ const TeamsNew = (props) => {
                 const errorMessage = `${response.status} (${response.statusText})`;
                 throw new Error(errorMessage) 
             }
+
+            const responseBody = await response.json()
+            setShouldRedirect({
+                status: true,
+                teamId: responseBody.id
+            })
         } catch (error) {
             console.log("error in fetch:", error)
         }
+    }
+
+    if (shouldRedirect.status === true) {
+        return(
+            <Redirect to={`/teams/${shouldRedirect.teamId}`}/>
+            )
     }
     return(
         <div className = "form">

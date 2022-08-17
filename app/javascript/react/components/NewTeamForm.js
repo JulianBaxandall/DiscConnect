@@ -16,7 +16,6 @@ const NewTeamForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         let formPayload = { team: currentTeam }
-        debugger
         props.submitTeam(event, formPayload)
         setCurrentTeam({
             name: "",

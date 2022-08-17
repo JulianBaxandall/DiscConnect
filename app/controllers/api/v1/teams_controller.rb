@@ -14,7 +14,7 @@ class Api::V1::TeamsController < ApplicationController
     def create
         team = Team.create(team_params)
         if team.save
-            redirect_to "/teams/#{team.id}"
+            render json: team
         else
             render json: {error: review.errors.full_messages}, status: :unprocessable_entity
         end
