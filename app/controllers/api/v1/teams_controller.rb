@@ -1,5 +1,7 @@
 class Api::V1::TeamsController < ApplicationController
+    
     protect_from_forgery unless: -> { request.format.json?}
+    before_action :authenticate_user!, except: [:index, :show]
 
     def index
         render json: Team.all
@@ -14,9 +16,10 @@ class Api::V1::TeamsController < ApplicationController
     def create
         team = Team.create(team_params)
         if team.save
+            flash[:msg] = "Team added successfully"
             render json: team
         else
-            render json: {error: review.errors.full_messages}, status: :unprocessable_entity
+            render json: {error: team.errors.full_messages}, status: :unprocessable_entity
         end
     end
 

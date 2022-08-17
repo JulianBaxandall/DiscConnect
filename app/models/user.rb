@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :registrations
+  has_many :workouts
   has_many :teams, through: :registrations
 end
