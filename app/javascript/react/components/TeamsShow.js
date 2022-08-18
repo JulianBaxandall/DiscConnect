@@ -25,6 +25,7 @@ const TeamsShow = (props) => {
     const teamMembers = showTeam.users.map((user) => {
         return(<TeamMemberTile 
             key = {user.id}
+            id = {user.id}
             name = {user.name}
             email = {user.email}
             />
