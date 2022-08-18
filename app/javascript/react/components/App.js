@@ -1,11 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import TeamsIndex from "./TeamsIndex"
-import TeamsShow from "./TeamsShow"
+import TeamsIndex from './TeamsIndex'
+import TeamsShow from './TeamsShow'
 import TeamsNew from './TeamsNew'
 import WorkoutsNew from './WorkoutsNew'
 import TeamWorkouts from './TeamWorkouts'
+import UserShow from './UserShow'
 
 export const App = (props) => {
   return (
@@ -16,6 +17,7 @@ export const App = (props) => {
         <Route exact path="/teams/:id/" component={TeamsShow} />
         <Route exact path="/workouts/new" component={WorkoutsNew} />
         <Route exact path="/teams/:id/workouts" component={TeamWorkouts} />
+        <Route exact path="/users/:id" component={UserShow} />
       </Switch>
     </BrowserRouter>
   )
