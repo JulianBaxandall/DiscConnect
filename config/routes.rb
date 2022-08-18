@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       end
       resources :workouts, only: [:create]
       resources :users, only: [:show]
+      resources :feedback, only: [:show, :create, :index]
     end
   end
 
@@ -20,5 +21,6 @@ Rails.application.routes.draw do
   get "/workouts/new", to: "workouts#new"
   get "/teams/:id/workouts", to: "workouts#index"
   get "/users/:id", to: "users#show"
+  get "teams/:id/feedback", to: "feedback#index"
 
 end
