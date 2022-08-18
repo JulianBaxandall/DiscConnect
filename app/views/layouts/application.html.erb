@@ -15,7 +15,7 @@
       <h5 class = "authentication-option"><%=link_to 'New Team', teams_new_path%></h5>
     <%- end -%>
     <%- if current_user -%>  
-        <a href = <%="/users/#{current_user.id}"%>> My Teams / Profile</a>
+        <h5 class = "authentication-option"><a href = <%="/users/#{current_user.id}"%>> My Teams / Profile</a></h5>
     <%- end -%>
     <%- if current_user -%>  
       <h5 class = "authentication-option"><%=link_to 'Post New Workout', workouts_new_path%></h5>

@@ -7,8 +7,8 @@ body {
 }
 
 .authentication-option {
-    color: #374A67;
-    background-color: #F4ECCD;
+    color: #F4ECCD;
+    background-color: #374A67;
 }
 
 .lavender {
@@ -16,8 +16,8 @@ body {
 }
 
 .top-bar {
-    color: #374A67;
-    background-color: #F4ECCD;
+    color: #F4ECCD;
+    background-color: #374A67;
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
     z-index:10;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
@@ -26,8 +26,8 @@ body {
 }
 
 .nav-bar {
-    color: #374A67;
-    background-color: #F4ECCD;
+    color: #F4ECCD;
+    background-color: #374A67;
 }
 
 .page {
@@ -85,4 +85,32 @@ body {
 .padded {
     margin: 30px;
     padding: 30px;
+}
+
+
+/* Leaderboard */
+.container {
+	width: 600px;
+	height: auto;
+}
+
+.row {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #AFAFAF;
+}
+
+.name {
+	position: relative;
+	display: inline-block;
+	width: 75%;
+	line-height: 45px;
+}
+
+.score {
+	position: relative;
+	display: inline-block;
+	width: 25%;
 }

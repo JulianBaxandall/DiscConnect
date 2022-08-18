@@ -14,7 +14,6 @@ const TeamWorkouts = (props) => {
                 throw error
             }
             const teamWorkoutData = await response.json()
-            console.log(teamWorkoutData)
             setTeam(teamWorkoutData)
             setTeamPlayers(teamWorkoutData.users)
         } catch (error) {
@@ -30,6 +29,7 @@ const TeamWorkouts = (props) => {
     let workouts = teamPlayers.map((user)=>{
         return (
             <UserWorkoutTile
+                key = {user.id}
                 user = {user}
             />
         )
@@ -38,7 +38,9 @@ const TeamWorkouts = (props) => {
     return (
         <div className = "independence">
             <h3>Teams Workouts: {team.name}</h3>
-            <div className = "page grid-x grid-padding-x grid-y grid-padding-y">{workouts}</div>
+            <div className = "container">
+                {workouts}
+            </div>
         </div>
     )
 }
