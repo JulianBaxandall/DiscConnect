@@ -6,7 +6,7 @@ const WorkoutsNewForm = (props) => {
         title:"",
         description:"",
         duration:"",
-        workout_type:""
+        workout_type:"other"
     })
 
     const handleChange = (event) => {
@@ -24,7 +24,7 @@ const WorkoutsNewForm = (props) => {
             title:"",
             description:"",
             duration:"",
-            workout_type:""
+            workout_type:"other"
         })
     }
 
@@ -62,14 +62,17 @@ const WorkoutsNewForm = (props) => {
                 </label>
             </div>
             <div className = "cell small-10 form">
-                <label className = "independence">Workout Type
-                    <input 
-                    className = "cell small-10 rounded" 
-                    type = "text"
-                    name = "workout_type"
-                    onChange={handleChange}
-                    value = {currentWorkout.workout_type}
-                    />
+                <label className = "independence rounded">Workout Type
+                    <select                    
+                        name = "workout_type"
+                        onChange={handleChange}
+                        value = {currentWorkout.workout_type}>
+                            <option value="throwing">Throwing</option>
+                            <option value="running">Running</option>
+                            <option value="lifting">Lifting</option>
+                            <option value="film">Film</option>
+                            <option value="other">Other</option>
+                    </select>
                 </label>
             </div>
             <div className = "cell small-10 centered">

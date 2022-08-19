@@ -25,6 +25,7 @@ const TeamsShow = (props) => {
     const teamMembers = showTeam.users.map((user) => {
         return(<TeamMemberTile 
             key = {user.id}
+            id = {user.id}
             name = {user.name}
             email = {user.email}
             />
@@ -32,10 +33,12 @@ const TeamsShow = (props) => {
     })
 
     let workoutsUrl = `/teams/${showTeam.id}/workouts`
+    let feedbackUrl = `/teams/${showTeam.id}/feedback`
     return(
         <div className = "page grid-x grid-padding-x grid-y grid-padding-y independence">            
             <h1>Team Name: {showTeam.name}</h1>
-            <h3><a href = {workoutsUrl}> Workouts</a></h3>
+            <h4><a href = {workoutsUrl}> Workouts</a></h4>
+            <h4><a href = {feedbackUrl}> Feedback</a></h4>
             <p>Description: {showTeam.description}</p>
             <h3>Team Members:</h3>
             {teamMembers}

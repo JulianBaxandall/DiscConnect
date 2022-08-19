@@ -28,7 +28,7 @@ const TeamsIndex = (props) => {
         return (<TeamComponent 
             key = {team.id}
             id = {team.id}
-            name={team.name} 
+            name={team.name}
             description = {team.description}/>
         )
     })

@@ -7,6 +7,7 @@ import TeamsNew from './TeamsNew'
 import WorkoutsNew from './WorkoutsNew'
 import TeamWorkouts from './TeamWorkouts'
 import UserShow from './UserShow'
+import TeamFeedback from './TeamFeedback'
 
 export const App = (props) => {
   return (
@@ -18,6 +19,8 @@ export const App = (props) => {
         <Route exact path="/workouts/new" component={WorkoutsNew} />
         <Route exact path="/teams/:id/workouts" component={TeamWorkouts} />
         <Route exact path="/users/:id" component={UserShow} />
+        <Route exact path="/teams/:id/feedback" component={TeamFeedback} />
+
       </Switch>
     </BrowserRouter>
   )

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClearHard</title>
+  <title>DiscConnect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <nav class="top-bar">
-    <h1><a href="/" class="nav-bar">ClearHard</a></h1>
+    <h1><a href="/" class="nav-bar">DiscConnect</a></h1>
     <h5 class = "authentication-option"><%=link_to 'Teams', teams_path%></h5>
     <h5 class = "authentication-option"><%=link_to 'Home', root_path%></h5>
     <%- if current_user -%>  
       <h5 class = "authentication-option"><%=link_to 'New Team', teams_new_path%></h5>
+    <%- end -%>
+    <%- if current_user -%>  
+        <h5 class = "authentication-option"><a href = <%="/users/#{current_user.id}"%>> My Teams / Profile</a></h5>
     <%- end -%>
     <%- if current_user -%>  
       <h5 class = "authentication-option"><%=link_to 'Post New Workout', workouts_new_path%></h5>
