@@ -7,8 +7,7 @@ import TeamsNew from './TeamsNew'
 import WorkoutsNew from './WorkoutsNew'
 import TeamWorkouts from './TeamWorkouts'
 import UserShow from './UserShow'
-import TeamFeedback from './TeamFeedback'
-import TasksIndex from './TasksIndex';
+import TeamFeedback from './TeamFeedback';
 
 export const App = (props) => {
   return (
@@ -21,7 +20,7 @@ export const App = (props) => {
         <Route exact path="/teams/:id/workouts" component={TeamWorkouts} />
         <Route exact path="/users/:id" component={UserShow} />
         <Route exact path="/teams/:id/feedback" component={TeamFeedback} />
-        <Route exact path="/teams/:id/tasks" component={TasksIndex} />
+
       </Switch>
     </BrowserRouter>
   )

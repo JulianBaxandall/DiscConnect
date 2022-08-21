@@ -33,7 +33,7 @@ const UserShow = (props) => {
     })
     return(
         <div className = "grid-x grid-padding-x grid-y grid-padding-y independence centered">
-            <div className = "padded cell small-11 card centered">
+            <div className = "padded cell small-11 card centered independence">
                 <h1>{showUser.name}</h1>
                 <h6>{showUser.email}</h6>
             </div>

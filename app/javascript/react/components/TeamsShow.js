@@ -37,9 +37,11 @@ const TeamsShow = (props) => {
     return(
         <div className = "page grid-x grid-padding-x grid-y grid-padding-y independence">            
             <h1>Team Name: {showTeam.name}</h1>
-            <h4><a href = {workoutsUrl}> Workouts</a></h4>
-            <h4><a href = {feedbackUrl}> Feedback</a></h4>
-            <p>Description: {showTeam.description}</p>
+            <div>
+                <h5><a href = {workoutsUrl} className = "button independence centered"> Workouts</a></h5>
+                <h5><a href = {feedbackUrl} className = "button independence centered"> Feedback</a></h5>
+            </div>
+            <p className = "independence">Description: {showTeam.description}</p>
             <h3>Team Members:</h3>
             {teamMembers}
         </div>

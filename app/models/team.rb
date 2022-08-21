@@ -4,5 +4,6 @@ class Team < ApplicationRecord
 
     has_many :registrations
     has_many :feedback
+    has_many :tasks
     has_many :users, through: :registrations
 end

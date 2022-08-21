@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="top-bar">
-    <h1><a href="/" class="nav-bar">DiscConnect</a></h1>
+  <nav class="top-bar nav-bar">
+
+    <h1><a href="/" class="nav-bar logo">DiscConnect</a></h1>
     <h5 class = "authentication-option"><%=link_to 'Teams', teams_path%></h5>
     <h5 class = "authentication-option"><%=link_to 'Home', root_path%></h5>
     <%- if current_user -%>  
@@ -20,6 +21,7 @@
     <%- if current_user -%>  
       <h5 class = "authentication-option"><%=link_to 'Post New Workout', workouts_new_path%></h5>
     <%- end -%>
+
     <section class="top-bar-section">
       <ul>
         
