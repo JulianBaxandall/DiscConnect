@@ -10,7 +10,7 @@ class Api::V1::FeedbackController < ApplicationController
                 serialized_team = ActiveModelSerializers::SerializableResource.new(team, serializer: TeamFeedbackSerializer).to_json
                 render json: serialized_team
             else
-                render json: current_user_id
+                render json: Registration.find_by(user_id: current_user_id, team_id: params[:team_id])
             end
         else
             render json: current_user_id
@@ -20,7 +20,6 @@ class Api::V1::FeedbackController < ApplicationController
     def create 
         feedback = Feedback.create(feedback_params)
         feedback.team_id = params[:team_id]
-        # binding.pry
         if feedback.save
             flash[:msg] = "Feedback added successfully"
             render json: feedback

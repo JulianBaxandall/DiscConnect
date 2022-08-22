@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'homes#index'
   devise_for :users
 
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :teams, only: [:index, :show, :create]
       resources :teams, only: [ :show] do
+        resources :tasks, only: [:index]
         resources :workouts, only: [:index]
         resources :feedback, only: [:show, :create, :index]
       end
@@ -23,5 +25,6 @@ Rails.application.routes.draw do
   get "/teams/:id/workouts", to: "workouts#index"
   get "/users/:id", to: "users#show"
   get "teams/:id/feedback", to: "feedback#index"
+  get "teams/:id/tasks", to: "tasks#index"
 
 end

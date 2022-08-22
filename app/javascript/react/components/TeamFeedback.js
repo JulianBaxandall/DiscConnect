@@ -2,9 +2,11 @@ import React, {useState, useEffect} from "react"
 
 import NewFeedbackForm from "./NewFeedbackForm"
 import FeedbackTile from "./FeedbackTile"
+import BlankComponent from "./BlankComponent"
 
 const TeamFeedback = (props) => {
     const [teamFeedback, setTeamFeedback] = useState(null)
+    const [userRole, setUserRole] = useState(null)
 
     const getTeamFeedback = async () => {
         try {
@@ -16,7 +18,12 @@ const TeamFeedback = (props) => {
             }
             const teamFeedbackData = await response.json()
             if (teamFeedbackData.feedback){
+                setUserRole("captain")
                 setTeamFeedback(teamFeedbackData.feedback)
+            } else if (teamFeedbackData.role){
+                setUserRole(teamFeedbackData.role)
+            } else {
+                setUserRole(null)
             }
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`);
@@ -63,10 +70,15 @@ const TeamFeedback = (props) => {
         })
     }
 
+    let optionalFeedbackForm = <BlankComponent/>
+    if (userRole){
+        optionalFeedbackForm = <NewFeedbackForm submitFeedback = {submitFeedback} />
+    }
+
     return (
         <div className = "page grid-x grid-padding-x grid-y grid-padding-y">
             <h1>Feedback</h1>
-            <NewFeedbackForm submitFeedback = {submitFeedback} />
+            {optionalFeedbackForm}
             <h5>Feedback:</h5>
             {responses}
         </div>

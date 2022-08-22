@@ -1,5 +1,13 @@
 body {
-    background-color: #E1DFF6;
+    background-color: #EFEFFB;
+}
+
+a {
+    color:#F4ECCD;
+}
+
+.logo {
+    font-family: myriad;
 }
 
 .independence {
@@ -12,7 +20,7 @@ body {
 }
 
 .lavender {
-    background-color: #E1DFF6;
+    background-color: #EFEFFB;
 }
 
 .top-bar {
@@ -35,7 +43,7 @@ body {
     padding: 10px;
     text-align: center;
     color: #374A67;
-    background-color: #E1DFF6;
+    background-color: #EFEFFB;
 }
 
 .authentication-page {
@@ -50,7 +58,7 @@ body {
     margin-right: auto;
     text-align: center;
     background-color: #374A67;
-    color: #E1DFF6;
+    color: #EFEFFB;
 }
 
 .card {

@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :registrations
   has_many :workouts
+  has_many :tasks
   has_many :teams, through: :registrations
 end
