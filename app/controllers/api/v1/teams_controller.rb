@@ -23,6 +23,11 @@ class Api::V1::TeamsController < ApplicationController
         end
     end
 
+    def search
+        teams = Team.where("name ILIKE ?", "%#{params['search_string']}%")
+        render json: teams
+    end
+
 
     private
 

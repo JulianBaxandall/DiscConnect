@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :workouts, only: [:create]
       resources :users, only: [:show, :search]  
       post 'users/search', to: 'users#search'
+      post 'teams/search', to: 'teams#search'
     end
   end
 

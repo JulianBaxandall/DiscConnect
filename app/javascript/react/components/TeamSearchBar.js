@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import BlankComponent from './BlankComponent'
-import TeamMemberTile from './TeamMemberTile'
+import TeamSearchResult from './TeamSearchResult'
 
-const SearchBar = (props) => {
-    const [results, setResults] = useState([])
-    const [searchString, setSearchString] = useState('')
+const TeamSearchBar = (props) => {
+    const [teamResults, setTeamResults] = useState([])
+    const [teamSearchString, setTeamSearchString] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         const body = JSON.stringify({
-          search_string: searchString
+          search_string: teamSearchString
         })
         try {
-            const response = await fetch("/api/v1/users/search", {
+            const response = await fetch("/api/v1/teams/search", {
                 method: "POST",
                 body: body,
                 headers: {
@@ -25,7 +25,7 @@ const SearchBar = (props) => {
                 throw new Error(errorMessage)
             }
             const responseBody = await response.json()
-            setResults(
+            setTeamResults(
                 responseBody
                 )
         } catch (error) {
@@ -35,19 +35,19 @@ const SearchBar = (props) => {
 
     const handleChange = (event) => {
         const newSearchString = event.target.value
-        setSearchString(newSearchString)
+        setTeamSearchString(newSearchString)
     }
 
     let resultsComponents = <BlankComponent/>
     
-    if (results[0]) {
-        resultsComponents = results.map((user)=> {
+    if (teamResults[0]) {
+        resultsComponents = teamResults.map((team)=> {
             return(
-                <TeamMemberTile 
-                key = {user.id}
-                id = {user.id}
-                name = {user.name}
-                email = {user.email}
+                <TeamSearchResult
+                    key = {team.id}
+                    id = {team.id}
+                    name = {team.name}
+                    description = {team.description}
                 />
             )
         })
@@ -56,16 +56,16 @@ const SearchBar = (props) => {
     }
 
     return (
-        <div>
+        <div className = "independence">
             <form onSubmit={handleSubmit}>
-                <label>Search</label>
-                <input type='text' name='searchString' value={searchString} onChange={handleChange} />
+                <label className = "independence">Team Search</label>
+                <input className = "rounded" type='text' name='teamSearchString' value={teamSearchString} onChange={handleChange} />
 
-                <input type='submit' value='Submit' />
+                <input className = "button rounded" type='submit' value='Search Teams' />
             </form>
             {resultsComponents}
         </div>
     )
 }
 
-export default SearchBar
+export default TeamSearchBar
