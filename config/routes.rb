@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       end
       resources :feedback, only: [:show, :index]
       resources :workouts, only: [:create]
-      resources :users, only: [:show]
+      resources :users, only: [:show, :search]  
+      post 'users/search', to: 'users#search'
+      post 'teams/search', to: 'teams#search'
     end
   end
 
@@ -26,5 +28,6 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show"
   get "teams/:id/feedback", to: "feedback#index"
   get "teams/:id/tasks", to: "tasks#index"
-
+  
+  get '/search', to: 'users#search'
 end
