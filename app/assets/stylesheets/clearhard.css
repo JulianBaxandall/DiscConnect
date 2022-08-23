@@ -1,9 +1,13 @@
 body {
-    background-color: #EFEFFB;
+    background-color: #ffffff;
 }
 
 a {
     color:#F4ECCD;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 .logo {
@@ -15,6 +19,7 @@ a {
 }
 
 .authentication-option {
+    font-weight: bold;
     color: #F4ECCD;
     background-color: #374A67;
 }
@@ -28,8 +33,8 @@ a {
     background-color: #374A67;
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
     z-index:10;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
-    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 0 15px #374A67(0, 0, 0, 0.6); 
+    -moz-box-shadow: 0 0 15px #374A67(0, 0, 0, 0.6); 
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -43,7 +48,7 @@ a {
     padding: 10px;
     text-align: center;
     color: #374A67;
-    background-color: #EFEFFB;
+    background-color: #ffffff;
 }
 
 .authentication-page {
@@ -58,7 +63,8 @@ a {
     margin-right: auto;
     text-align: center;
     background-color: #374A67;
-    color: #EFEFFB;
+    font-weight: bold;
+    color: #F4ECCD;
 }
 
 .card {
@@ -67,7 +73,8 @@ a {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-    background-color: #F4ECCD;
+    background-color: #374A67;
+    color: #EFEFFB;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
