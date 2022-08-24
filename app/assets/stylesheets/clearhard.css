@@ -129,3 +129,9 @@ h1 {
 	display: inline-block;
 	width: 25%;
 }
+
+.user-workouts {
+	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
