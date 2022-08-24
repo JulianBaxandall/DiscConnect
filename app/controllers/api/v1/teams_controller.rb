@@ -4,7 +4,9 @@ class Api::V1::TeamsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-        render json: Team.all
+        user = User.find(current_user.id)
+        serialized_user = ActiveModelSerializers::SerializableResource.new(user, serializer: MyTeamsSerializer).to_json
+        render json: serialized_user
     end
 
     def show

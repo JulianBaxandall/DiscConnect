@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 
 import TeamComponent from "./TeamComponent"
+import BlankComponent from "./BlankComponent"
 
 const TeamsIndex = (props) => {
     const [teams, setTeams] = useState([])
@@ -14,7 +15,8 @@ const TeamsIndex = (props) => {
                 throw(error)
             }
             const teamsData = await response.json()
-            setTeams(teamsData)
+            // debugger
+            setTeams(teamsData.teams)
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`)
         }
@@ -24,19 +26,25 @@ const TeamsIndex = (props) => {
         getTeams()
     }, [])
 
-    const teamTiles = teams.map((team) => {
-        return (<TeamComponent 
-            key = {team.id}
-            id = {team.id}
-            name={team.name}
-            description = {team.description}/>
-        )
-    })
+    let optionalEmptyMessage = "Uh oh, looks like there are no teams to display!"
+    let teamTiles = <BlankComponent/>
+    if (teams.length > 0){
+        optionalEmptyMessage = ""
+        teamTiles = teams.map((team) => {
+            return (<TeamComponent 
+                key = {team.id}
+                id = {team.id}
+                name={team.name}
+                description = {team.description}/>
+            )
+        })
+    }
 
     return(
         <div className = "page grid-x grid-padding-x grid-y grid-padding-y">
-            <h1>Teams Index Page</h1>
+            <h1>My Teams</h1>
             {teamTiles}
+            <h3>{optionalEmptyMessage}</h3>
         </div>
     )    
 }

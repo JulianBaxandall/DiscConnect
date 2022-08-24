@@ -10,7 +10,7 @@
   <nav class="top-bar nav-bar">
 
     <h1><a href="/" class="nav-bar logo">DiscConnect</a></h1>
-    <h5 class = "authentication-option"><%=link_to 'Teams', teams_path%></h5>
+    <h5 class = "authentication-option"><%=link_to 'My Teams', teams_path%></h5>
     <h5 class = "authentication-option"><%=link_to 'Home', root_path%></h5>
     <h5 class = "authentication-option"><%=link_to 'Search', "/search"%></h5>
 
@@ -18,7 +18,7 @@
       <h5 class = "authentication-option"><%=link_to 'New Team', teams_new_path%></h5>
     <%- end -%>
     <%- if current_user -%>  
-        <h5 class = "authentication-option"><a href = <%="/users/#{current_user.id}"%>> My Teams / Profile</a></h5>
+        <h5 class = "authentication-option"><a href = <%="/users/#{current_user.id}"%>> Profile</a></h5>
     <%- end -%>
     <%- if current_user -%>  
       <h5 class = "authentication-option"><%=link_to 'Post New Workout', workouts_new_path%></h5>
