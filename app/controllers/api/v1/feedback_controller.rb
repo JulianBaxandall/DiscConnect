@@ -28,6 +28,16 @@ class Api::V1::FeedbackController < ApplicationController
         end
     end
 
+    def update
+        if Feedback.update(params[:id], resolved: params[:resolved])
+            flash[:msg] = "Feedback updated successfully"
+            feedback = Feedback.find(params[:id])
+            render json: feedback
+        else
+            render json: {error: feedback.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
+
     def feedback_params
         params.require(:feedback).permit(:title, :category, :body, :team_id) 
     end
