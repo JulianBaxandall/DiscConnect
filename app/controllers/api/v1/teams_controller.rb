@@ -11,8 +11,9 @@ class Api::V1::TeamsController < ApplicationController
 
     def show
         team = Team.find(params[:id])
-        serialized_team = ActiveModelSerializers::SerializableResource.new(team, serializer: TeamShowSerializer).to_json
-        render json: serialized_team
+        current_role = Registration.find_by(user_id: current_user.id, team_id: params[:id])
+        serialized_team = ActiveModelSerializers::SerializableResource.new(team, serializer: TeamShowSerializer)
+        render json: {team: serialized_team, user:current_role}.to_json
     end
 
     def create
@@ -34,6 +35,6 @@ class Api::V1::TeamsController < ApplicationController
     private
 
     def team_params
-        params.require(:team).permit(:name, :description, :division)    
+        params.require(:team).permit(:name, :description, :division, :current_role)    
     end
 end
