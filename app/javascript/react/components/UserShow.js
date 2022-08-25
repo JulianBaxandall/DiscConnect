@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import TeamComponent from "./TeamComponent"
 import WorkoutShow from "./WorkoutShow"
+import InvitesShow from "./InvitesShow"
 
 const UserShow = (props) => {
     const [showUser, setShowUser] = useState({"teams":[], "workouts":[]})
@@ -64,6 +65,9 @@ const UserShow = (props) => {
                     <h5 className = "independence">User's Workouts:</h5>
                     {userWorkouts}
                 </ul>
+            </div>
+            <div className = "cell small-6 padded">
+                <InvitesShow/>
             </div>
         </div>
     )

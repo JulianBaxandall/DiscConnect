@@ -15,7 +15,6 @@ const TeamsIndex = (props) => {
                 throw(error)
             }
             const teamsData = await response.json()
-            // debugger
             setTeams(teamsData.teams)
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`)
