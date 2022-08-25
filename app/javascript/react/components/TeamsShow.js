@@ -42,23 +42,56 @@ const TeamsShow = (props) => {
 
     let newTaskButton = <BlankComponent />
     if (currentRole === "captain"){
-        newTaskButton = <h5><a href = {newTasksUrl} className = "button independence centered"> Create New Task</a></h5>
+        newTaskButton = <h5><a href = {newTasksUrl} className = "button independence centered"> New Task</a></h5>
     }
 
     return(
-        <div className = "page grid-x grid-padding-x grid-y grid-padding-y independence">            
-            <h1>Team Name: {showTeam.name}</h1>
-            <div>
-                <h5><a href = {workoutsUrl} className = "button independence centered"> Workouts</a></h5>
-                <h5><a href = {feedbackUrl} className = "button independence centered"> Feedback</a></h5>
-                <h5><a href = {tasksUrl} className = "button independence centered"> My Tasks</a></h5>
-                {newTaskButton}
+        <div>
+            <div className = "grid-x independence centered">    
+                <div className = "cell small-12">
+                    <h1>Team Name: {showTeam.name}</h1>
+                </div>
+                <div className = "cell small-2">
+                    <h5><a href = {workoutsUrl} className = "button"> Workouts</a></h5>
+                    <h5><a href = {feedbackUrl} className = "button"> Feedback</a></h5>
+                    <h5><a href = {tasksUrl} className = "button"> My Tasks</a></h5>
+                    {newTaskButton}
+                </div>
+                <div className = "cell small-8">
+                    <img className = "cover-image" src = "https://cdn.ultiworld.com/wordpress/wp-content/uploads/2022/05/D1Champs_PMR_20220529112024PMR_8037_225-ZF-2059-92641-1-007.jpg"/>
+                </div>
+                <div className = "cell small-12">
+                    <p className = "independence">Description: {showTeam.description}</p>
+                    <h3>Team Members:</h3>
+                </div>
             </div>
-            <p className = "independence">Description: {showTeam.description}</p>
-            <h3>Team Members:</h3>
-            {teamMembers}
+            <div className="padded">
+                {teamMembers}
+            </div>
         </div>
     )
 }
 
 export default TeamsShow
+
+
+/* <div className = "page grid-x grid-padding-x grid-y grid-padding-y independence">            
+<h1>Team Name: {showTeam.name}</h1>
+<div>
+    <div className = "cell small-3">
+        <h5><a href = {workoutsUrl} className = "button"> Workouts</a></h5>
+    </div>
+    <div className = "cell small-3">
+        <h5><a href = {feedbackUrl} className = "button"> Feedback</a></h5>
+    </div>
+    <div className = "cell small-3">
+        <h5><a href = {tasksUrl} className = "button"> My Tasks</a></h5>
+    </div>
+    <div className = "cell small-3">
+        {newTaskButton}
+    </div>
+</div>
+<p className = "independence">Description: {showTeam.description}</p>
+<h3>Team Members:</h3>
+{teamMembers}
+</div> */

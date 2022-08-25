@@ -56,7 +56,7 @@ const TeamSearchBar = (props) => {
     }
 
     return (
-        <div className = "independence">
+        <div>
             <form onSubmit={handleSubmit}>
                 <label className = "independence">Team Search</label>
                 <input className = "rounded" type='text' name='teamSearchString' value={teamSearchString} onChange={handleChange} />
