@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :teams, only: [:index, :show, :create]
       resources :teams, only: [ :show] do
-        resources :tasks, only: [:index]
+        resources :tasks, only: [:index, :create]
         resources :workouts, only: [:index]
         resources :feedback, only: [:show, :create, :index]
       end
@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get "teams/:id/feedback", to: "feedback#index"
   get "teams/:id/tasks", to: "tasks#index"
   get '/search', to: 'users#search'
+  get "teams/:id/tasksnew", to: "tasks#new"
 end

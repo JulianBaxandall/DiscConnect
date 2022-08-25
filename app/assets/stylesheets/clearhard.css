@@ -68,16 +68,20 @@ h1 {
 }
 
 .card {
-    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
     z-index:10;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
-    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
-    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     background-color: #374A67;
     color: #EFEFFB;
+    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 10px;
+}
+
+.cover-image {
+    width: 85%;
 }
 
 .form {
@@ -135,3 +139,4 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
+

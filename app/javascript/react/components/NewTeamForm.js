@@ -6,6 +6,7 @@ const NewTeamForm = (props) => {
         description:"",
         division:""
     })
+    
     const handleChange = (event) => {
         setCurrentTeam({
           ...currentTeam,

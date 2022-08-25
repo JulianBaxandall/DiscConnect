@@ -6,8 +6,8 @@ const TeamSearchResult = (props) => {
 
     return(
         <div className = "card cell small-4">
-            <h4><a href = {nameUrl} className = "independence">Name:{props.name}</a></h4>
-            <p className = "independence">Description: {props.description}</p>
+            <h4><a href = {nameUrl}>Name:{props.name}</a></h4>
+            <p>Description: {props.description}</p>
         </div>
     )
 }
