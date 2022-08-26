@@ -2,9 +2,11 @@ import React, {useState, useEffect} from "react"
 import TeamComponent from "./TeamComponent"
 import WorkoutShow from "./WorkoutShow"
 import InvitesShow from "./InvitesShow"
+import BlankComponent from "./BlankComponent"
 
 const UserShow = (props) => {
     const [showUser, setShowUser] = useState({"teams":[], "workouts":[]})
+    const [isUser, setIsUser] = useState(false)
     const getUser = async() => {
         try {
             const response = await fetch(`/api/v1/users/${props.match.params.id}`)
@@ -14,7 +16,8 @@ const UserShow = (props) => {
                 throw error
             }
             const showUserData = await response.json()
-            setShowUser(showUserData)
+            setShowUser(showUserData.user)
+            setIsUser(showUserData.sameUser)
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`);
         }
@@ -48,6 +51,11 @@ const UserShow = (props) => {
         )
     })
 
+    let InvitesShowComponent = <BlankComponent/>
+    if (isUser){
+        InvitesShowComponent = <InvitesShow/>
+    }
+
     return(
         <div className = "grid-x grid-padding-x centered">
             <div className = "padded cell small-11 card centered">
@@ -66,8 +74,8 @@ const UserShow = (props) => {
                     {userWorkouts}
                 </ul>
             </div>
-            <div className = "cell small-6 padded">
-                <InvitesShow/>
+            <div className = "cell small-12 padded">
+                {InvitesShowComponent}
             </div>
         </div>
     )

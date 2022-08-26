@@ -6,4 +6,5 @@ class Api::V1::InvitesController < ApplicationController
 
         render json: invites
     end
+
 end

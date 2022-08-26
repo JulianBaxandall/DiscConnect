@@ -2,8 +2,22 @@ body {
     background-color: #ffffff;
 }
 
+.home-wrap{
+    overflow: hidden;
+    position: relative;
+}
+
+.bg {
+    opacity: 0.15;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+}
+
 a {
-    color:#F4ECCD;
+    color:#ffc44f;
 }
 
 h1 {
@@ -12,6 +26,7 @@ h1 {
 
 .logo {
     font-family: myriad;
+    color: #ffffff;
 }
 
 .independence {
@@ -22,10 +37,6 @@ h1 {
     font-weight: bold;
     color: #F4ECCD;
     background-color: #374A67;
-}
-
-.lavender {
-    background-color: #EFEFFB;
 }
 
 .top-bar {
@@ -64,20 +75,31 @@ h1 {
     text-align: center;
     background-color: #374A67;
     font-weight: bold;
-    color: #F4ECCD;
+    color: #ffc44f;
 }
 
 .card {
     z-index:10;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
     background-color: #374A67;
-    color: #EFEFFB;
+    color: #fce725;
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding: 20px;
     border: 10px;
+}
+
+.invite {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    border-width:10px;
+    border-style:solid;
+    border-color: #374A67;
+    color: #374A67;
+    background-color: #f3e56a;
 }
 
 .cover-image {
