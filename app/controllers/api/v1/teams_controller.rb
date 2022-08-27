@@ -31,6 +31,14 @@ class Api::V1::TeamsController < ApplicationController
         render json: teams
     end
 
+    def captaincy
+        captaincies = Registration.where(role: "captain", user_id: current_user.id)
+        teams = []
+        captaincies.each do |reg|
+            teams.push(Team.find(reg.team_id))
+        end
+        render json: teams.to_json
+    end
 
     private
 
