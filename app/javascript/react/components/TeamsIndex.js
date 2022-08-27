@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 
 import TeamComponent from "./TeamComponent"
 import BlankComponent from "./BlankComponent"
+import MyImage from "/Users/julianbaxandall/Desktop/Launch Academy/Breakable-Toy/app/assets/images/natties-47.jpeg"
 
 const TeamsIndex = (props) => {
     const [teams, setTeams] = useState([])
@@ -42,6 +43,7 @@ const TeamsIndex = (props) => {
     return(
         <div className = "page grid-x grid-padding-x grid-y grid-padding-y">
             <h1>My Teams</h1>
+            <img class = "full-page-image" src={MyImage} />
             {teamTiles}
             <h3>{optionalEmptyMessage}</h3>
         </div>
