@@ -9,7 +9,6 @@ const NewTasksForm = (props) => {
         user_id: ""
     })
 
-
     const handleChange = (event) => {
         setCurrentTask({
           ...currentTask,

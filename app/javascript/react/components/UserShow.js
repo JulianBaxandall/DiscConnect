@@ -3,10 +3,14 @@ import TeamComponent from "./TeamComponent"
 import WorkoutShow from "./WorkoutShow"
 import InvitesShow from "./InvitesShow"
 import BlankComponent from "./BlankComponent"
+import InviteForm from "./InviteForm"
+import InviteFormToggler from "./InviteFormToggler"
 
 const UserShow = (props) => {
     const [showUser, setShowUser] = useState({"teams":[], "workouts":[]})
     const [isUser, setIsUser] = useState(false)
+    const [showInviteForm, setShowInviteForm] = useState(false)
+
     const getUser = async() => {
         try {
             const response = await fetch(`/api/v1/users/${props.match.params.id}`)
@@ -56,11 +60,21 @@ const UserShow = (props) => {
         InvitesShowComponent = <InvitesShow/>
     }
 
+    let InvitesForm = <BlankComponent/>
+
+    if (showInviteForm) {
+        InvitesForm = <InviteForm userId = {props.match.params.id}/>
+    } else {
+        InvitesForm = <BlankComponent/>
+    }
+
     return(
         <div className = "grid-x grid-padding-x centered">
             <div className = "padded cell small-11 card centered">
                 <h1>{showUser.name}</h1>
                 <h6>{showUser.email}</h6>
+                <InviteFormToggler showInviteForm = {showInviteForm} setShowInviteForm = {setShowInviteForm}/>
+                {InvitesForm}
             </div>
             <div className = "cell small-6">
                 <ul className = "centered">
