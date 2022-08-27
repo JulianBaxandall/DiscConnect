@@ -34,8 +34,8 @@ const TasksIndex = (props) => {
         )
     })
     return (
-        <div>
-            <h1>Tasks Index Page</h1>
+        <div className = "grid-x grid-padding-x independence">
+            <h1 className = "cell small-12">Tasks Index Page</h1>
             {tasks}
         </div>
     )

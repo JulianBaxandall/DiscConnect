@@ -9,9 +9,8 @@
 <body>
   <nav class="top-bar nav-bar">
 
-    <h1><a href="/" class="nav-bar logo">DiscConnect</a></h1>
+    <h1><a href="/" class="logo">DiscConnect</a></h1>
     <h5 class = "authentication-option"><%=link_to 'My Teams', teams_path%></h5>
-    <h5 class = "authentication-option"><%=link_to 'Home', root_path%></h5>
     <h5 class = "authentication-option"><%=link_to 'Search', "/search"%></h5>
 
     <%- if current_user -%>  

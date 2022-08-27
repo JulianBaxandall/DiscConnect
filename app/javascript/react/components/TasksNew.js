@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react"
 import BlankComponent from "./BlankComponent"
 import NewTasksForm from "./NewTasksForm"
-import TeamMemberTile from "./TeamMemberTile"
 
 const TasksNew = (props) => {
     const [teamMembers, setTeamMembers] = useState([])
@@ -50,26 +49,11 @@ const TasksNew = (props) => {
         getTeamMembers()
     }, [])
 
-    let teamMemberTiles = teamMembers.map((user) => {
-        return(<TeamMemberTile 
-            key = {user.id}
-            id = {user.id}
-            name = {user.name}
-            email = {user.email}
-            />
-        )
-    })
 
     let newTaskFormInstance = <NewTasksForm submitTask = {submitTask} teamMembers = {teamMembers}/>
 
-    if (currentRole != "captain"){
-        teamMemberTiles = <BlankComponent />
-        newTaskFormInstance = <BlankComponent />
-    }
-
     return (
         <div>
-            {teamMemberTiles}
             {newTaskFormInstance}
         </div>
     )

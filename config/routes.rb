@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :invites, only: [:index, :create]
+      resources :registrations, only: [:create]
       resources :teams, only: [:index, :show, :create]
       resources :teams, only: [ :show] do
         resources :tasks, only: [:index, :create]
