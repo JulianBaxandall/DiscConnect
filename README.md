@@ -1,24 +1,32 @@
-# README
+# DiscConnect
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DiscConnect is a peer-to-peer team organization web-app for ultimate frisbee teams. The app lets captains and team leaders spend less time on the logistical concerns of running a team and more time focused on playing the sport. 
 
-Things you may want to cover:
+### Disconnect lets users:
 
-* Ruby version
+* Join and create teams
 
-* System dependencies
+* Invite users to teams as a captain or member
 
-* Configuration
+* Post different types of workouts such as lifting, track, and throwing exercises
 
-* Database creation
+* View a leader board of team member's workouts
 
-* Database initialization
+* Assign tasks to users on teams they captain
 
-* How to run the test suite
+* View their assigned tasks
 
-* Services (job queues, cache servers, search engines, etc.)
+* Search for users and teams
 
-* Deployment instructions
+* Submit anonymous feedback for captains
 
-* ...
+* View and resolve feedback as a captain
+
+### Using the app
+
+Users can find the production version of the application at https://disc-connect.herokuapp.com/
+
+
+### Conclusion
+
+Thank you for looking into DiscConnect! Whether you are just checking out the code or looking to use the web-app for your own team thank you for your time! Have a good game!
