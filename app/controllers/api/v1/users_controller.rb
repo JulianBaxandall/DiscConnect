@@ -9,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def search
-        users = User.where("name ILIKE ?", "%#{params['search_string']}%")
+        users = User.where("name ILIKE ? OR email ILIKE ?", "%#{params['search_string']}%", "%#{params['search_string']}%")
         render json: users
     end
 
