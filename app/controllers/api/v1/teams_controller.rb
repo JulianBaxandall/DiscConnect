@@ -20,6 +20,7 @@ class Api::V1::TeamsController < ApplicationController
         team = Team.create(team_params)
         if team.save
             flash[:msg] = "Team added successfully"
+            Registration.create(user_id: current_user.id, team_id: team.id, role: "captain")
             render json: team
         else
             render json: {error: team.errors.full_messages}, status: :unprocessable_entity

@@ -13,8 +13,8 @@ eli = User.create(email: "eli@gmail.com", name:"Eli", password: "111111", passwo
 sophie = User.create(email: "sophie@gmail.com", name:"Sophie", password: "111111", password_confirmation: "111111")
 
 
-Registration.create(user_id:julian.id, team_id: ursa.id)
-Registration.create(user_id:julian.id, team_id: rabbits.id)
+Registration.create(user_id:julian.id, team_id: ursa.id, role:"captain")
+Registration.create(user_id:julian.id, team_id: rabbits.id, role:"captain")
 Registration.create(user_id:nellie.id, team_id: ruckus.id)
 Registration.create(user_id:nellie.id, team_id: rabbits.id)
 Registration.create(user_id:freddie.id, team_id: donkeys.id, role:"captain")
