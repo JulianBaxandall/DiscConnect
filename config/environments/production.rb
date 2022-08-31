@@ -6,11 +6,11 @@ Rails.application.configure do
   :address        => ENV['MAILGUN_SMTP_SERVER'],
   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'disc-connect.herokuapp.com/',
+  :domain         => ENV['MAILGUN_DOMAIN'],
   :authentication => :plain,
-}
+  }
 
-ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp
 
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
