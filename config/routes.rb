@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :invites, only: [:index, :create]
       resources :registrations, only: [:create]
       resources :teams, only: [:index, :show, :create]
-      resources :teams, only: [ :show] do
+      resources :teams, only: [:show] do
         resources :tasks, only: [:index, :create]
         resources :workouts, only: [:index]
         resources :feedback, only: [:show, :create, :index]
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :workouts, only: [:create]
       resources :users, only: [:show, :search]
       post 'feedback/update', to: 'feedback#update'  
+      post 'tasks/update', to: 'tasks#update'  
       post 'users/search', to: 'users#search'
       post 'teams/search', to: 'teams#search'
     end

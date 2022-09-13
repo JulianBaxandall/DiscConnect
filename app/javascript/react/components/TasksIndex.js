@@ -27,6 +27,7 @@ const TasksIndex = (props) => {
         return(
             <TaskComponent
                 key = {task.id}
+                id = {task.id}
                 title = {task.title}
                 body = {task.body}
                 urgency = {task.urgency}

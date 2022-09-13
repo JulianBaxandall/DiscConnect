@@ -27,6 +27,12 @@ const NewTasksForm = (props) => {
         event.preventDefault()
         let formPayload = { task: currentTask }
         props.submitTask(event, formPayload)
+        setCurrentTask({
+            title:"",
+            body:"",
+            urgency:"",
+            user_id: ""
+        })
     }
 
 

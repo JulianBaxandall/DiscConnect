@@ -3,7 +3,7 @@ class Api::V1::TasksController < ApplicationController
 
     def index
         user = User.find(current_user.id)
-        tasks = Task.where(user_id: user.id, team_id:params[:team_id])
+        tasks = Task.where(user_id: user.id, team_id:params[:team_id], resolved:false)
         render json: tasks
     end
 
@@ -15,6 +15,16 @@ class Api::V1::TasksController < ApplicationController
         task.team_id = team_id
         if task.save
             flash[:msg] = "Task added successfully"
+            render json: task
+        else
+            render json: {error: task.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
+
+    def update            
+        task = Task.find(params[:task_id])
+        if Task.update(params[:task_id], resolved: true)
+            task = Task.find(params[:task_id])
             render json: task
         else
             render json: {error: task.errors.full_messages}, status: :unprocessable_entity
