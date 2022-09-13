@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/about", to: "homes#about"
   get "/users/sign_out", to: "homes#index"
   get "/teams", to: "teams#index"
   get "/teams/new", to: "teams#new"

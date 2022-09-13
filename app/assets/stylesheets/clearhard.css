@@ -1,5 +1,8 @@
 body {
     background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .home-wrap{
@@ -37,7 +40,7 @@ h1 {
     color: #374A67;
 }
 
-.authentication-option {
+.navigation-option {
     font-weight: bold;
     color: #F4ECCD;
     background-color: #374A67;
@@ -56,6 +59,22 @@ h1 {
 .nav-bar {
     color: #F4ECCD;
     background-color: #374A67;
+}
+
+.footer-text {
+    color: #f9f8f4;
+    background-color: #374A67;
+}
+
+.footer {
+    margin-top: auto;
+    font-weight: normal;
+    background-color: #374A67;
+    color: #F4ECCD;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    left: 0;
 }
 
 .page {

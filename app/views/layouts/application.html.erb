@@ -10,27 +10,27 @@
   <nav class="top-bar nav-bar">
 
     <h1><a href="/" class="logo">DiscConnect</a></h1>
-    <h5 class = "authentication-option"><%=link_to 'My Teams', teams_path%></h5>
-    <h5 class = "authentication-option"><%=link_to 'Search', "/search"%></h5>
+    <h5 class = "navigation-option"><%=link_to 'My Teams', teams_path%></h5>
+    <h5 class = "navigation-option"><%=link_to 'Search', "/search"%></h5>
 
     <%- if current_user -%>  
-      <h5 class = "authentication-option"><%=link_to 'New Team', teams_new_path%></h5>
+      <h5 class = "navigation-option"><%=link_to 'New Team', teams_new_path%></h5>
     <%- end -%>
     <%- if current_user -%>  
-        <h5 class = "authentication-option"><a href = <%="/users/#{current_user.id}"%>> Profile</a></h5>
+        <h5 class = "navigation-option"><a href = <%="/users/#{current_user.id}"%>> Profile</a></h5>
     <%- end -%>
     <%- if current_user -%>  
-      <h5 class = "authentication-option"><%=link_to 'Post New Workout', workouts_new_path%></h5>
+      <h5 class = "navigation-option"><%=link_to 'Post New Workout', workouts_new_path%></h5>
     <%- end -%>
 
     <section class="top-bar-section">
       <ul>
         
         <%- if current_user -%>
-          <li class = "authentication-option"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li class = "navigation-option"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li class = "authentication-option"><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li class = "authentication-option"><%= link_to 'Sign In', new_user_session_path %></li>
+          <li class = "navigation-option"><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li class = "navigation-option"><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
@@ -53,4 +53,10 @@
   <%= javascript_pack_tag 'application' %>
   <%= yield :extra_footer %>
 </body>
+<nav class="nav-bar footer">
+  <div class = "grid-x grid-padding-x grid-y">
+    <p class = "cell small-6" ><a href="/" class = "footer-text">Home page</a></p>
+    <p class = "cell small-6" ><a href="/about" class = "footer-text">About the creator</a></p>
+  </div>
+</nav>
 </html>
