@@ -14,7 +14,7 @@ const FeedbackTile = (props) => {
     }
 
     return (
-        <div className = "card cell small-4">
+        <div className = "card cell small-4 white">
             <h5>{props.title}</h5>
             <p>Category: {props.category}</p>
             <p>Body: {props.body}</p>
@@ -23,8 +23,8 @@ const FeedbackTile = (props) => {
                 <input 
                     type="submit" 
                     value="Toggle Resolved"
-                    className = "button"
-                    />            
+                    className = "button dark-back-button"
+                />            
             </form>
         </div>
     )
