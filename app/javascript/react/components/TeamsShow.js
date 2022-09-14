@@ -42,7 +42,7 @@ const TeamsShow = (props) => {
 
     let newTaskButton = <BlankComponent />
     if (currentRole === "captain"){
-        newTaskButton = <h5><a href = {newTasksUrl} className = "button independence centered"> New Task</a></h5>
+        newTaskButton = <h5><a href = {newTasksUrl} className = "button"> New Task</a></h5>
     }
 
     return(
