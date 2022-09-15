@@ -11,7 +11,6 @@ const InvitesShow = (props) => {
         teamId: null
     })
 
-    let userInviteTiles = <BlankComponent/>
     const getInvites = async() => {
         try {
             const response = await fetch(`/api/v1/invites`)
@@ -25,10 +24,9 @@ const InvitesShow = (props) => {
         } catch (error) {
             console.error(`Error in fetch: ${error.message}`);
         }
-        
     }
-
-
+    
+    
     const registerUser = async (event, formPayload) => {
         event.preventDefault()
         try { 
@@ -37,8 +35,8 @@ const InvitesShow = (props) => {
                 credentials: "same-origin",
                 method: "POST",
                 headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formPayload)
             })
@@ -55,21 +53,30 @@ const InvitesShow = (props) => {
             console.log("error in fetch:", error)
         }
     }
-
     
-
-    userInviteTiles = invites.map((invite) => {
-        return(
-            <InviteTile 
-            key = {invite.id}
-            role = {invite.role} 
-            team_id = {invite.team_id}
-            user_id = {invite.user_id}
-            registerUser = {registerUser}
-            />
+    
+    
+    let userInviteTiles = <BlankComponent/>
+    if (invites.length === 0){
+       userInviteTiles =
+       (
+            <div className="cell centered">
+                <h5>No invites pending</h5>
+            </div>
         )
-    })
-
+    } else {
+        userInviteTiles = invites.map((invite) => {
+            return(
+                <InviteTile 
+                key = {invite.id}
+                role = {invite.role} 
+                team_id = {invite.team_id}
+                user_id = {invite.user_id}
+                registerUser = {registerUser}
+                />
+            )
+        })
+    }
 
     useEffect(() => {
         getInvites()
@@ -83,8 +90,8 @@ const InvitesShow = (props) => {
     
     return (
         <div className = "grid-x grid-padding-x centered independence invites">
-            <h3 className = "cell small-12">Team Invites:</h3>
             <div className = "cell small-11 padded">
+            <h3 className = "cell small-12">Team Invites:</h3>
                 {userInviteTiles}
             </div>
         </div>
