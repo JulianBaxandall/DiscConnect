@@ -26,6 +26,7 @@ DiscConnect is a peer-to-peer team organization web-app for ultimate frisbee tea
 
 Users can find the production version of the application at https://disc-connect.herokuapp.com/
 
+If you would like to see an account with seeded data that is part of existing teams you can log in with the email "myemail@gmail.com" and password "111111"
 
 ### Conclusion
 
