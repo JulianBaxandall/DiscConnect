@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+import BlankComponent from "./BlankComponent"
 import TaskComponent from "./TaskComponent"
 
 const TasksIndex = (props) => {
@@ -23,17 +24,27 @@ const TasksIndex = (props) => {
         getTasks()
     }, [])
 
-    const tasks = userTasks.map((task)=> {
-        return(
-            <TaskComponent
-                key = {task.id}
-                id = {task.id}
-                title = {task.title}
-                body = {task.body}
-                urgency = {task.urgency}
-            />
+    let tasks = <BlankComponent/>
+    if (userTasks.length === 0) {
+        tasks = (
+            <div className="cell centered">
+                <h5>No tasks pending</h5>
+            </div>
         )
-    })
+    } else {
+        tasks = userTasks.map((task)=> {
+            return(
+                <TaskComponent
+                    key = {task.id}
+                    id = {task.id}
+                    title = {task.title}
+                    body = {task.body}
+                    urgency = {task.urgency}
+                />
+            )
+        })
+    }
+
     return (
         <div className = "grid-x grid-padding-x independence">
             <h1 className = "cell small-12">Tasks Index Page</h1>

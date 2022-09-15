@@ -25,15 +25,25 @@ const TeamsShow = (props) => {
         getTeam()
       }, [])
 
-    const teamMembers = showTeam.users.map((user) => {
-        return(<TeamMemberTile 
-            key = {user.id}
-            id = {user.id}
-            name = {user.name}
-            email = {user.email}
-            />
+    let teamMembers = <BlankComponent/>
+    if (showTeam.users.length === 0) {
+        teamMembers =
+        (
+            <div className="cell centered">
+                <h5>No invites pending</h5>
+            </div>
         )
-    })
+    } else {
+        teamMembers = showTeam.users.map((user) => {
+            return(<TeamMemberTile 
+                key = {user.id}
+                id = {user.id}
+                name = {user.name}
+                email = {user.email}
+                />
+            )
+        })
+    }
 
     const workoutsUrl = `/teams/${showTeam.id}/workouts`
     const feedbackUrl = `/teams/${showTeam.id}/feedback`
@@ -73,25 +83,3 @@ const TeamsShow = (props) => {
 }
 
 export default TeamsShow
-
-
-/* <div className = "page grid-x grid-padding-x grid-y grid-padding-y independence">            
-<h1>Team Name: {showTeam.name}</h1>
-<div>
-    <div className = "cell small-3">
-        <h5><a href = {workoutsUrl} className = "button"> Workouts</a></h5>
-    </div>
-    <div className = "cell small-3">
-        <h5><a href = {feedbackUrl} className = "button"> Feedback</a></h5>
-    </div>
-    <div className = "cell small-3">
-        <h5><a href = {tasksUrl} className = "button"> My Tasks</a></h5>
-    </div>
-    <div className = "cell small-3">
-        {newTaskButton}
-    </div>
-</div>
-<p className = "independence">Description: {showTeam.description}</p>
-<h3>Team Members:</h3>
-{teamMembers}
-</div> */

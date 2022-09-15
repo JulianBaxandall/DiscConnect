@@ -41,19 +41,28 @@ const UserShow = (props) => {
         )
     })
 
-    const userWorkouts = showUser.workouts.map((workout)=>{
-        return (
-            <WorkoutShow 
-            className = "cell small-4"
-            key = {workout.id}
-            id = {workout.id}
-            title={workout.title} 
-            description = {workout.description}
-            workout_type = {workout.workout_type}
-            duration = {workout.duration}
-            />
+    let userWorkouts = <BlankComponent />
+    if(showUser.workouts.length === 0) {
+        userWorkouts = (
+            <div className="cell centered independence">
+                <h5>No workouts logged</h5>
+            </div>
         )
-    })
+    } else {
+        userWorkouts = showUser.workouts.map((workout)=>{
+            return (
+                <WorkoutShow 
+                className = "cell small-4"
+                key = {workout.id}
+                id = {workout.id}
+                title={workout.title} 
+                description = {workout.description}
+                workout_type = {workout.workout_type}
+                duration = {workout.duration}
+                />
+            )
+        })
+    }
 
     let InvitesShowComponent = <BlankComponent/>
     if (isUser){
