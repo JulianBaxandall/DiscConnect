@@ -121,6 +121,19 @@ h1 {
     border: 10px;
 }
 
+.key {
+    z-index:10;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); 
+    background-color: #fcfce9;
+    color: #374A67;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px;
+    border: 10px;
+}
+
 .invite {
     margin-left: auto;
     margin-right: auto;
